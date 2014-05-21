@@ -96,7 +96,7 @@ h4 {
       padding: 10px; } }
   @media (min-width: 1024px) {
     #navWrap {
-      width: 20%; } }
+      width: 22%; } }
 
 nav ul li {
   text-align: center;
@@ -188,7 +188,7 @@ nav ul li {
       float: left; } }
   @media (min-width: 1024px) {
     #mainWrap {
-      width: 77%; } }
+      width: 75%; } }
 
 .shifted {
   -webkit-transform: translateX(70%); }
@@ -339,8 +339,9 @@ header hgroup {
 footer {
   clear: both;
   padding: 25px;
-  background-color: grey;
-  color: lightgray;
+  border-top: 1px dotted gray;
+  text-align: center;
+  color: gray;
   font-size: 0.6rem; }
 
 .clearfix:after {
