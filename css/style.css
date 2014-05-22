@@ -6,19 +6,7 @@
 * {
   box-sizing: border-box; }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -27,8 +15,7 @@ time, mark, audio, video {
   vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
 
 body {
@@ -40,8 +27,7 @@ ol, ul {
 blockquote, q {
   quotes: none; }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none; }
 
@@ -51,7 +37,7 @@ table {
 
 a {
   text-decoration: none;
-  color: black; }
+  color: #000; }
 
 html {
   font-size: 16px; }
@@ -140,7 +126,7 @@ nav ul li {
           border-right: 2px solid aqua;
           width: 200px; }
       nav ul li a, nav ul li .nolink {
-        color: gray;
+        color: grey;
         padding: 20px 20px; }
       nav ul li span:hover + ul, nav ul li ul:hover {
         left: 101%; }
@@ -151,7 +137,7 @@ nav ul li {
       right: 0px;
       z-index: 1;
       font-size: 1.5rem;
-      color: gray; }
+      color: grey; }
     nav .parent_link a:before, nav span:before {
       display: none; } }
 
@@ -181,7 +167,7 @@ nav ul li {
   z-index: 2;
   width: 100%;
   background-color: #fff;
-  transition: 0.5s -webkit-transform linear; }
+  transition: 0.5s-webkit-transform linear; }
   @media (min-width: 800px) {
     #mainWrap {
       width: 67%;
@@ -329,7 +315,7 @@ header hgroup {
     margin: 15px 0 10px; }
   .blog_blurb .byline {
     margin: 0 0 10px; }
-  .blog_blurb .tags, .blog_blurb .read_more {
+  .blog_blurb .tags, .blog_blurb .blog_blurb .read_more, .blog_blurb .blog_blurb .read_more {
     display: inline-block;
     width: 49%;
     margin: 15px 0; }
@@ -339,9 +325,9 @@ header hgroup {
 footer {
   clear: both;
   padding: 25px;
-  border-top: 1px dotted gray;
+  border-top: 1px dotted grey;
   text-align: center;
-  color: gray;
+  color: grey;
   font-size: 0.6rem; }
 
 .clearfix:after {
