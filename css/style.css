@@ -302,6 +302,22 @@ header hgroup {
     .quote_block {
       padding: 20px; } }
 
+.consult_box {
+  text-align: center;
+  padding: 15px;
+  background-color: lightgray; }
+  .consult_box h2 {
+    padding: 0 0 5px; }
+  .consult_box h4 {
+    font-size: 1rem; }
+
+.feature_box {
+  display: inline-block;
+  border: 1px solid #000;
+  width: 48%;
+  padding: 100px 0;
+  text-align: center; }
+
 .sub_header {
   text-align: center;
   padding: 10px 10px;
