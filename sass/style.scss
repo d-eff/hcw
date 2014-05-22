@@ -172,6 +172,11 @@ nav {
     }
     main {
         padding: 0 25px;
+        p {
+            font-size:0.8125rem;
+            line-height:1rem;
+            margin:20px 0;
+        }
         @include breakpoint(full){
             padding:0;
         }
@@ -290,6 +295,22 @@ header {
     }
 }
 
+.quote_block {
+    border-top:1px dotted lightgray;
+    border-bottom:1px dotted lightgray;
+    padding:12px 5px;
+    margin:15px 0;
+    text-align:center;
+    font-size:1.5rem;
+    font-weight:300;
+    letter-spacing:0.5px;
+    font-style:italic;
+    @include breakpoint(600){
+        padding:20px; 
+    }
+
+}
+
 //=============SUB HEAD/SEARCH BAR=======//
 .sub_header {
     text-align:center;
@@ -335,7 +356,7 @@ header {
 //===========BLOG============//
 
 .blog_post {
-    margin: 35px 0 35px;
+    margin: 35px 0;
     .date {
         width:100%;
         padding:5px;
@@ -398,8 +419,6 @@ header {
         .comment_count {
             float:right;
         }
-
-
     }
     @include breakpoint(600){
         font-size:0.8125rem;
