@@ -160,13 +160,20 @@ nav {
     z-index:2;
     width:100%;
     background-color:#fff;
-    transition: 0.5s -webkit-transform linear;
+    transition: -webkit-transform 0.5s linear;
+
     @include breakpoint(800){
         width:67%;
         float:left;
     }
     @include breakpoint(full){
         width:75%;
+    }
+    main {
+        padding: 0 25px;
+        @include breakpoint(full){
+            padding:0;
+        }
     }
 }
 .shifted {
@@ -213,16 +220,16 @@ header {
     padding:10px 0;
     color:#fff;
     background-color:#282828;
-    font-size:1.2rem;
+    font-size:2rem;
     @include breakpoint(800){
-        font-size:2rem;
+        font-size:3.125rem;
         background-color:#fff;
         color:#000;
     }
 }
 .tagline {
     display:none;
-    font-size:1.2rem;
+    font-size:1.3125rem;
     @include breakpoint(800){
         display:block; 
         padding:10px 0;
@@ -235,7 +242,7 @@ header {
     background-color:lightgray;
     padding:15px;
     p {
-        font-size:0.8rem;
+        font-size:0.8125rem;
     }
     label {
         position:absolute;
@@ -273,42 +280,48 @@ header {
 .sub_header {
     text-align:center;
     padding:10px 10px;
+    background-color:lightgray;
     #search_box {
         width:90%;
-        margin:0 0 10px;
+        height:1.5625rem;
         @include breakpoint(600){
-            width:50%;
+            width:40%;
             float:left;
+            margin:0 0 0 10px;
         }
     } 
-    .tab {
-        display:inline;
-        padding:0 10px;
-        width:50%;
-        @include breakpoint(600){
-            padding:0px 5px;
-            width:20%;
+    .tabs {
+        margin: 5px 0 0;
+        li:first-child {
+            display:none;
+            @include breakpoint(400){
+                display:inline-block;
+            }
         }
+        li:nth-child(2){
+            border-right:2px solid #000;
+            @include breakpoint(400){
+                border-left:2px solid #000;
+            }
+        }
+        li {
+            display:inline-block;
+            padding:0 5px;
+        }
+        a {
+            padding:0 3px;
+        }
+
     }
     @include breakpoint(600){
-        padding:10px 25px;
-    }
-    @include breakpoint(800){
-        padding:10px 0;
+        text-align:left;
     }
 }
 
 //===========BLOG============//
-.blog_feed {
-    margin: 10px 0;
-    padding:0 25px;
-    @include breakpoint(800){
-        padding:0;
-    }
-}
 
-.blog_blurb {
-    margin: 0 0 70px;
+.blog_post {
+    margin: 35px 0 35px;
     .date {
         width:100%;
         padding:5px;
@@ -324,30 +337,99 @@ header {
     }
     .post_title {
         margin:15px 0 10px;
+        font-size:2.0625rem;
+        font-weight:300;
     }
     .byline {
        margin:0 0 10px; 
     }
-    .tags {
-        display:inline-block;
-        width:49%;
-        margin:15px 0;
-    }
     .read_more {
-        @extend .tags;
-        text-align:right;
+        display:inline-block;
+        width:100%;
+        margin:15px 0;
+        text-align:center;
+        @include breakpoint(600){
+            text-align:right;
+            a {
+                border:1px solid #000;
+                padding:3px 12px; 
+            }
+        }
+    }
+    .img_wrap {
+       max-width:100%; 
+       margin:15px 0;
+       text-align:center;
+       img {
+            max-width:100%;
+        }
+        @include breakpoint(400){
+            max-width:250px;
+            float:left;
+            margin:0 15px 15px 0;
+        }
+    }
+    footer {
+        width:100%;
+        margin:20px 0 0;
+        padding:15px;
+        background-color:lightgray;
+        font-size:1rem;
+        p {
+            display:inline-block;
+        }
+        .tags {
+            text-align:left;
+        }
+        .comment_count {
+            float:right;
+        }
+
+
+    }
+    @include breakpoint(600){
+        font-size:0.8125rem;
     }
 
 }
 
+.comment_form {
+    display:none;
+    margin:0 0 30px 0;
+    h2 {
+        font-weight:300;
+    }
+    label {
+        position:absolute;
+        left:-9999px;
+    }
+    input, textarea {
+        display:block;
+        width:100%;
+        margin: 10px 0;
+        padding:5px;
+    }
+    button {
+        padding:5px 12px;
+        background-color:#000;
+        color:#fff;
+
+    }
+
+    @include breakpoint(600) {
+        display:block;
+        width:60%;
+    }
+}
+
 //=============FOOTER============//
-footer {
+#main_footer {
     clear:both;
     padding:25px;
     border-top:1px dotted $gray;
     text-align:center;
     color:$gray;
-    font-size:0.6rem;
+    font-size:0.625rem;
 
 }
 
