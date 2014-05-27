@@ -1,7 +1,8 @@
 (function(){
     var menu = document.querySelectorAll('.parent_link'),
         burger = document.querySelectorAll('header .burger')[0],
-        main = document.getElementById('mainWrap');
+        main = document.getElementById('mainWrap'),
+        nav = document.getElementById('navWrap');
 
     for(var x = 0; x < menu.length; ++x){
         (function (x){
@@ -17,7 +18,12 @@
 
     burger.addEventListener('click', function(e){
         main.classList.toggle('shifted')
-    })
+    });
+
+    window.onscroll = function(){
+      nav.style.top = window.scrollY + "px";
+    
+    }
 
 
 
