@@ -160,7 +160,13 @@ h4 {
     z-index:2;
     width:100%;
     background-color:#fff;
-    transition: -webkit-transform 0.5s linear;
+    -webkit-transition:transform 0.5s linear;
+    -webkit-transition:-webkit-transform 0.5s linear;
+    -moz-transition:-moz-transform 0.5s linear;
+    -o-transition:transform 0.5s linear;
+    transition:transform 0.5s linear;
+    transition:-webkit-transform 0.5s linear;
+    transition:-moz-transform 0.5s linear;
     @include breakpoint(800){
         width:67%;
         float:left;
@@ -188,9 +194,17 @@ h4 {
     }
 }
 .shifted {
-    -webkit-transform: translateX(70%);
+    -webkit-transform:translateX(70%);
+    -moz-transform:translateX(70%);
+    -ms-transform:translateX(70%);
+    -o-transform:translateX(70%);
+    transform:translateX(70%);
     @include breakpoint(600){
-        -webkit-transform: translateX(40%);
+      -webkit-transform:translateX(40%);
+      -moz-transform:translateX(40%);
+      -ms-transform:translateX(40%);
+      -o-transform:translateX(40%);
+      transform:translateX(40%);
     }
     @include breakpoint(800){
         -webkit-transform: none;
