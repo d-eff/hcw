@@ -4,6 +4,7 @@
         main = document.getElementById('mainWrap');
 
     menu.addEventListener('click', function(e){
+      e.preventDefault();
         var sib = e.target.nextElementSibling;
         console.log(sib);
 

@@ -21,7 +21,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   line-height: 1; }
 
-ol, ul {
+ul {
   list-style: none; }
 
 blockquote, q {
@@ -64,7 +64,7 @@ h4 {
       margin: 25px auto 0; } }
 
 #navWrap {
-  position: relative;
+  position: absolute;
   z-index: 1;
   width: 70%; }
   @media (min-width: 600px) {
@@ -82,54 +82,38 @@ h4 {
     #navWrap {
       width: 22%; } }
 
-nav ul li {
+.main_menu li {
   text-align: center;
   position: relative;
   border-bottom: 1px solid #fff;
   background-color: #282828; }
-  nav ul li ul {
-    height: 0;
-    overflow: hidden; }
-    nav ul li ul li {
-      background-color: #000; }
-  nav ul li .expanded {
-    height: 100%; }
-  nav ul li a, nav ul li .nolink {
-    position: relative;
-    display: inline-block;
-    z-index: 5;
-    width: 100%;
-    padding: 15px 20px;
-    text-transform: uppercase;
-    cursor: pointer;
-    color: #fff; }
-  nav ul li .parent_link a:before, nav ul li span:before {
-    content: '+ '; }
+.main_menu a {
+  position: relative;
+  display: inline-block;
+  z-index: 5;
+  width: 100%;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fff; }
+.main_menu .parent_link a:before {
+  content: '+ '; }
+.main_menu .expanded {
+  height: 100%; }
 @media (min-width: 800px) {
-  nav {
+  .main_menu {
     margin: 0 0 20px 0; }
-    nav ul li:first-child {
+    .main_menu ul li:first-child {
       border-top: 1px dotted #000; }
-    nav ul li {
+    .main_menu li {
       border-bottom: 1px dotted #000;
       background-color: #fff; }
-      nav ul li ul {
-        position: absolute;
-        left: -9999px;
-        top: -1px;
-        z-index: 10;
-        height: 100%;
-        overflow: visible; }
-        nav ul li ul li {
-          background-color: #fff;
-          border-right: 2px solid aqua;
-          width: 200px; }
-      nav ul li a, nav ul li .nolink {
-        color: grey;
-        padding: 20px 20px; }
-      nav ul li span:hover + ul, nav ul li ul:hover {
-        left: 101%; }
-    nav .parent_link:after {
+    .main_menu a {
+      color: grey;
+      padding: 20px 20px; }
+    .main_menu .parent_link a:hover + ul, .main_menu .child_menu:hover {
+      left: 101%; }
+    .main_menu .parent_link:after {
       content: ">";
       position: absolute;
       top: 15px;
@@ -137,8 +121,26 @@ nav ul li {
       z-index: 1;
       font-size: 1.5rem;
       color: grey; }
-    nav .parent_link a:before, nav span:before {
+    .main_menu .parent_link a:before {
       display: none; } }
+
+.child_menu {
+  height: 0;
+  overflow: hidden; }
+  .child_menu li {
+    background-color: #000; }
+  @media (min-width: 800px) {
+    .child_menu {
+      position: absolute;
+      left: -9999px;
+      top: -1px;
+      z-index: 10;
+      height: 100%;
+      overflow: visible; }
+      .child_menu li {
+        background-color: #fff;
+        border-right: 2px solid aqua;
+        width: 200px; } }
 
 .social_menu {
   text-align: center;
@@ -156,36 +158,38 @@ nav ul li {
 
 .nav_banner {
   width: 90%;
-  border: 1px solid gray;
+  border: 1px solid grey;
   padding: 60px;
   margin: 20px auto;
   text-align: center; }
 
 #mainWrap {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  position: relative;
   z-index: 2;
   width: 100%;
   background-color: #fff;
   transition: -webkit-transform 0.5s linear; }
   @media (min-width: 800px) {
     #mainWrap {
-      position: relative;
       width: 67%;
       float: left; } }
   @media (min-width: 1024px) {
     #mainWrap {
       width: 75%; } }
   #mainWrap main {
-    padding: 20px 25px 0;
-    margin: p;
-    margin-font-size: 0.8125rem;
-    margin-line-height: 1rem;
-    margin-margin: 20px 0; }
+    padding: 20px 25px 0; }
+    #mainWrap main p {
+      font-size: 0.8125rem;
+      line-height: 1rem;
+      margin: 20px 0; }
+    #mainWrap main section {
+      margin: 40px 0; }
     @media (min-width: 1024px) {
       #mainWrap main {
-        padding: 0; } }
+        padding: 0; }
+        #mainWrap main p {
+          font-size: 1.1rem;
+          font-weight: 300; } }
 
 .shifted {
   -webkit-transform: translateX(70%); }
@@ -196,29 +200,30 @@ nav ul li {
     .shifted {
       -webkit-transform: none; } }
 
-header hgroup {
+.page_header hgroup {
   text-align: center;
   width: 100%; }
-  header hgroup h6 {
-    display: none;
-    font-size: 0.8rem;
-    margin: 0 0 25px; }
-    @media (min-width: 800px) {
-      header hgroup h6 {
-        display: block; } }
   @media (min-width: 800px) {
-    header hgroup {
+    .page_header hgroup {
       display: inline-block;
       width: 48%;
       margin: 0 3% 0 0;
       text-align: left;
       vertical-align: top; } }
   @media (min-width: 1024px) {
-    header hgroup {
+    .page_header hgroup {
       width: 61%; } }
 @media (min-width: 800px) {
-  header {
+  .page_header {
     margin: 15px 0; } }
+
+.lang_select {
+  display: none;
+  font-size: 0.8rem;
+  margin: 0 0 25px; }
+  @media (min-width: 800px) {
+    .lang_select {
+      display: block; } }
 
 .site_name {
   display: block;
@@ -235,17 +240,18 @@ header hgroup {
 
 .tagline {
   display: none;
-  font-size: 1.3125rem; }
+  font-size: 1.375rem; }
   @media (min-width: 800px) {
     .tagline {
       display: block;
-      padding: 10px 0; } }
+      padding: 10px 0;
+      color: lightgrey; } }
 
 .formWrap {
   display: none;
   width: 48%;
   text-align: center;
-  background-color: lightgray;
+  background-color: lightgrey;
   padding: 15px; }
   .formWrap p {
     font-size: 0.8125rem; }
@@ -286,11 +292,11 @@ header hgroup {
       text-align: center;
       text-transform: uppercase;
       font-size: 1.5rem;
-      background-color: lightgray; } }
+      background-color: lightgrey; } }
 
 .quote_block {
-  border-top: 1px dotted lightgray;
-  border-bottom: 1px dotted lightgray;
+  border-top: 1px dotted lightgrey;
+  border-bottom: 1px dotted lightgrey;
   padding: 12px 5px;
   margin: 15px 0;
   text-align: center;
@@ -305,7 +311,7 @@ header hgroup {
 .consult_box {
   text-align: center;
   padding: 15px;
-  background-color: lightgray; }
+  background-color: lightgrey; }
   .consult_box h2 {
     padding: 0 0 5px; }
   .consult_box h4 {
@@ -318,10 +324,33 @@ header hgroup {
   padding: 100px 0;
   text-align: center; }
 
+.consultation_block {
+  padding: 40px;
+  margin: 25px 0;
+  background-color: lightgrey;
+  text-align: center;
+  font-weight: 300; }
+  .consultation_block h3 {
+    padding: 0 0 15px; }
+    @media (min-width: 600px) {
+      .consultation_block h3 {
+        font-size: 1.8rem; } }
+
+.detail_list li {
+  font-size: 0.8125rem;
+  list-style: initial;
+  margin: 0 0 0 25px;
+  padding: 2px 0; }
+  @media (min-width: 600px) {
+    .detail_list li {
+      margin: 0 0 0 45px;
+      font-weight: 300;
+      font-size: 1.1rem; } }
+
 .sub_header {
   text-align: center;
   padding: 10px 10px;
-  background-color: lightgray; }
+  background-color: lightgrey; }
   .sub_header #search_box {
     width: 90%;
     height: 1.5625rem; }
@@ -350,6 +379,49 @@ header hgroup {
   @media (min-width: 600px) {
     .sub_header {
       text-align: left; } }
+
+.image_grid li {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%; }
+  @media (min-width: 400px) {
+    .image_grid li {
+      max-width: 48%; } }
+  @media (min-width: 600px) {
+    .image_grid li {
+      max-width: 27%;
+      margin: 0 2.5%; } }
+.image_grid img {
+  max-width: 100%; }
+.image_grid h6 {
+  margin: 5px 0;
+  font-size: 1.2rem; }
+
+.concept_list li {
+  text-align: center;
+  margin: 20px 0; }
+  @media (min-width: 600px) {
+    .concept_list li {
+      text-align: left; } }
+.concept_list img {
+  max-width: 100%;
+  margin: 0 0 10px; }
+  @media (min-width: 800px) {
+    .concept_list img {
+      max-width: 47%; } }
+@media (min-width: 600px) {
+  .concept_list div {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    margin: 0 0 0 10px; } }
+@media (min-width: 1024px) {
+  .concept_list div {
+    width: 65%; } }
+.concept_list h4 {
+  text-transform: uppercase;
+  font-weight: 400; }
 
 .blog_post {
   margin: 35px 0; }
@@ -391,7 +463,7 @@ header hgroup {
     width: 100%;
     margin: 20px 0 0;
     padding: 15px;
-    background-color: lightgray;
+    background-color: lightgrey;
     font-size: 1rem; }
     .blog_post footer p {
       display: inline-block; }

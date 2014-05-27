@@ -1,5 +1,6 @@
-$default: #000;
-$gray: gray;
+$primary: #000;
+$primary_dark: gray;
+$primary_light: lightgray;
 
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @import 'reset';
@@ -36,7 +37,7 @@ h4 {
 
 //==============NAV================
 #navWrap {
-    position:relative;
+    position:absolute;
     z-index:1;
     width:70%;
     @include breakpoint(600){
@@ -55,35 +56,28 @@ h4 {
     }
 }
 
-nav {
-    ul li {
+.main_menu {
+    li {
         text-align:center;
         position:relative;
         border-bottom:1px solid #fff;
         background-color:#282828;
-        ul {
-            height:0; 
-            overflow:hidden;
-            li {
-                background-color:#000;
-            }
-        }
-        .expanded {
-            height:100%;
-        }
-        a, .nolink {
-            position:relative;
-            display:inline-block;
-            z-index:5;
-            width:100%;
-            padding:15px 20px;
-            text-transform:uppercase;
-            cursor:pointer;
-            color:#fff;
-        }
-        .parent_link a:before, span:before {
-            content: '+ ';
-        }
+    }
+    a {
+        position:relative;
+        display:inline-block;
+        z-index:5;
+        width:100%;
+        padding:15px 20px;
+        text-transform:uppercase;
+        cursor:pointer;
+        color:#fff;
+    }
+    .parent_link a:before {
+        content: '+ ';
+    }
+    .expanded {
+        height:100%;
     }
 
     @include breakpoint(800){
@@ -91,30 +85,17 @@ nav {
         ul li:first-child {
             border-top:1px dotted #000;
         }
-        ul li {
+        li {
             border-bottom: 1px dotted #000;
             background-color:#fff;
-            ul {
-                position:absolute;
-                left:-9999px;
-                top:-1px;
-                z-index:10;
-                height:100%;
-                overflow:visible;
-                li {
-                    background-color:#fff;
-                    border-right:2px solid aqua;
-                    width:200px; 
-                }
-            }
-            a, .nolink {
-                color:$gray;
-                padding:20px 20px;
-            }
-            span:hover + ul, ul:hover {
-                left:101%;
-            } 
         }
+        a {
+            color:$primary_dark;
+            padding:20px 20px;
+        }
+        .parent_link a:hover + ul, .child_menu:hover {
+            left:101%;
+        } 
         .parent_link:after {
             content: ">";
             position:absolute;
@@ -122,13 +103,33 @@ nav {
             right:0px;
             z-index:1;
             font-size:1.5rem;
-            color:$gray;
+            color:$primary_dark;
         }
-        .parent_link a:before, span:before {
+        .parent_link a:before {
             display:none;
         }
     }
 }   
+.child_menu {
+  height:0; 
+  overflow:hidden;
+  li {
+      background-color:#000;
+  }
+  @include breakpoint(800){
+    position:absolute;
+    left:-9999px;
+    top:-1px;
+    z-index:10;
+    height:100%;
+    overflow:visible;
+    li {
+        background-color:#fff;
+        border-right:2px solid aqua;
+        width:200px; 
+    }
+  }
+}
 
 .social_menu {
     text-align:center;
@@ -147,7 +148,7 @@ nav {
 }
 .nav_banner {
     width:90%;
-    border:1px solid gray;
+    border:1px solid $primary_dark;
     padding:60px;
     margin:20px auto;
     text-align:center;
@@ -155,15 +156,12 @@ nav {
 
 //====================MAIN============//
 #mainWrap {
-    position:absolute;
-    top:0px;
-    left:0px;
+    position:relative;
     z-index:2;
     width:100%;
     background-color:#fff;
     transition: -webkit-transform 0.5s linear;
     @include breakpoint(800){
-        position:relative;
         width:67%;
         float:left;
     }
@@ -177,8 +175,15 @@ nav {
             line-height:1rem;
             margin:20px 0;
         }
+        section {
+          margin:40px 0;
+        }
         @include breakpoint(full){
             padding:0;
+            p {
+              font-size:1.1rem;
+              font-weight:300;
+            }
         }
     }
 }
@@ -193,18 +198,10 @@ nav {
 }
 
 //=================HEADER==========//
-header {
+.page_header {
     hgroup {
         text-align:center;
         width:100%;
-        h6 {
-            display:none;
-            font-size:0.8rem;
-            margin:0 0 25px;
-            @include breakpoint(800){
-                display:block;
-            }
-        } 
         @include breakpoint(800){
             display:inline-block;
             width:48%;
@@ -220,6 +217,16 @@ header {
         margin:15px 0;
     }
 }
+
+.lang_select {
+    display:none;
+    font-size:0.8rem;
+    margin:0 0 25px;
+    @include breakpoint(800){
+        display:block;
+    }
+} 
+
 .site_name {
     display:block;
     width:100%;
@@ -235,17 +242,19 @@ header {
 }
 .tagline {
     display:none;
-    font-size:1.3125rem;
+    font-size:1.375rem;
     @include breakpoint(800){
         display:block; 
         padding:10px 0;
+        color:$primary_light;
     }
 }
+
 .formWrap {
     display:none;
     width:48%;
     text-align:center;
-    background-color:lightgray;
+    background-color:$primary_light;
     padding:15px;
     p {
         font-size:0.8125rem;
@@ -284,20 +293,20 @@ header {
 
 .page_title {
     margin:10px 0;
-    font-weight:300;
+    font-weight:300; 
     @include breakpoint(800){
         width:100%;
         padding:7px 0;
         text-align:center;
         text-transform:uppercase;
         font-size:1.5rem;
-        background-color:lightgray;
+        background-color:$primary_light;
     }
 }
 
 .quote_block {
-    border-top:1px dotted lightgray;
-    border-bottom:1px dotted lightgray;
+    border-top:1px dotted $primary_light;
+    border-bottom:1px dotted $primary_light;
     padding:12px 5px;
     margin:15px 0;
     text-align:center;
@@ -314,7 +323,7 @@ header {
 .consult_box {
     text-align:center;  
     padding:15px;
-    background-color:lightgray;
+    background-color:$primary_light;
     h2 {
       padding:0 0 5px;
     }
@@ -331,11 +340,40 @@ header {
   text-align:center;
 }
 
+.consultation_block {
+  padding:40px;
+  margin:25px 0;
+  background-color:$primary_light;
+  text-align:center;
+  font-weight:300;
+  h3 {
+    padding:0 0 15px;
+    @include breakpoint(600){
+      font-size:1.8rem;
+    
+    }
+  }
+}
+
+.detail_list {
+  li {
+    font-size:0.8125rem;
+    list-style:initial;
+    margin:0 0 0 25px;
+    padding:2px 0;
+    @include breakpoint(600){
+    margin:0 0 0 45px;
+    font-weight:300;
+      font-size:1.1rem;
+    }
+  }
+}
+
 //=============SUB HEAD/SEARCH BAR=======//
 .sub_header {
     text-align:center;
     padding:10px 10px;
-    background-color:lightgray;
+    background-color:$primary_light;
     #search_box {
         width:90%;
         height:1.5625rem;
@@ -371,6 +409,62 @@ header {
     @include breakpoint(600){
         text-align:left;
     }
+}
+
+
+.image_grid {
+  li {
+    display:inline-block;
+    text-align:center;
+    vertical-align:top;
+    width:100%;
+    @include breakpoint(400){
+      max-width:48%;
+    }
+    @include breakpoint(600){
+      max-width:27%;
+      margin:0 2.5%;
+    }
+  }
+  img {
+    max-width:100%; 
+  }
+  h6 {
+    margin:5px 0;
+    font-size:1.2rem; 
+  }
+}
+
+.concept_list {
+  li {
+    text-align:center;
+    margin:20px 0;
+    @include breakpoint(600){
+      text-align:left;
+    } 
+  }
+  img {
+    max-width:100%;
+    margin:0 0 10px;
+    @include breakpoint(800){
+      max-width:47%;
+    }
+  }
+  div {
+    @include breakpoint(600){
+      display:inline-block;
+      width:50%;
+      vertical-align:top;
+      margin:0 0 0 10px;
+    }
+    @include breakpoint(full){
+      width:65%;
+    }
+  }
+  h4 {
+    text-transform: uppercase;
+    font-weight:400;
+  }
 }
 
 //===========BLOG============//
@@ -422,7 +516,7 @@ header {
         width:100%;
         margin:20px 0 0;
         padding:15px;
-        background-color:lightgray;
+        background-color:$primary_light;
         font-size:1rem;
         p {
             display:inline-block;
@@ -509,9 +603,9 @@ header {
     clear:both;
     padding:25px;
     margin:25px 0 0;
-    border-top:1px dotted $gray;
+    border-top:1px dotted $primary_dark;
     text-align:center;
-    color:$gray;
+    color:$primary_dark;
     font-size:0.625rem;
 }
 
