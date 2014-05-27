@@ -96,8 +96,6 @@ h4 {
   text-transform: uppercase;
   cursor: pointer;
   color: #fff; }
-.main_menu .parent_link a:before {
-  content: '+ '; }
 .main_menu .expanded {
   height: 100%; }
 @media (min-width: 800px) {
