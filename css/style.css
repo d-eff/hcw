@@ -229,14 +229,16 @@ h4 {
   display: block;
   width: 100%;
   padding: 10px 0;
-  color: #fff;
   background-color: #282828;
   font-size: 2rem; }
+  .site_name a {
+    color: #fff; }
   @media (min-width: 800px) {
     .site_name {
       font-size: 3.125rem;
-      background-color: #fff;
-      color: #000; } }
+      background-color: #fff; }
+      .site_name a {
+        color: #000; } }
 
 .tagline {
   display: none;
@@ -347,6 +349,40 @@ h4 {
       font-weight: 300;
       font-size: 1.1rem; } }
 
+.contact_form {
+  text-align: center;
+  margin: 0 auto;
+  background-color: lightgrey;
+  padding: 70px 10px; }
+  .contact_form p {
+    font-size: 0.8125rem; }
+  .contact_form label {
+    position: absolute;
+    left: -9999px; }
+  .contact_form input, .contact_form select {
+    width: 100%;
+    padding: 1%;
+    margin: 7px 0; }
+  @media (min-width: 1024px) {
+    .contact_form {
+      width: 70%;
+      padding: 60px; }
+      .contact_form #contact_fname, .contact_form #contact_lname {
+        width: 48%; }
+      .contact_form #contact_phone {
+        width: 65%; }
+      .contact_form #contact_email {
+        width: 97%; }
+      .contact_form #contact_gender {
+        width: 32%; }
+      .contact_form textarea {
+        width: 97%;
+        margin: 7px 0;
+        height: 100px; }
+      .contact_form button {
+        text-transform: uppercase;
+        width: 30%; } }
+
 .sub_header {
   text-align: center;
   padding: 10px 10px;
@@ -388,10 +424,20 @@ h4 {
   @media (min-width: 400px) {
     .image_grid li {
       max-width: 48%; } }
+.image_grid.four li {
+  max-width: 47%;
+  margin: 3px; }
   @media (min-width: 600px) {
-    .image_grid li {
-      max-width: 27%;
-      margin: 0 2.5%; } }
+    .image_grid.four li {
+      max-width: 28%;
+      margin: 1.5% 2%; } }
+  @media (min-width: 1024px) {
+    .image_grid.four li {
+      max-width: 20%; } }
+@media (min-width: 600px) {
+  .image_grid.three li {
+    max-width: 27%;
+    margin: 0 2.5%; } }
 .image_grid img {
   max-width: 100%; }
 .image_grid h6 {

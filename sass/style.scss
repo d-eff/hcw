@@ -231,13 +231,18 @@ h4 {
     display:block;
     width:100%;
     padding:10px 0;
-    color:#fff;
     background-color:#282828;
     font-size:2rem;
+    a {
+      color:#fff;
+    }
     @include breakpoint(800){
         font-size:3.125rem;
         background-color:#fff;
+        a {
         color:#000;
+        
+        }
     }
 }
 .tagline {
@@ -369,6 +374,52 @@ h4 {
   }
 }
 
+//todo: abstract out formwrap so this can extend most of it
+.contact_form {
+    text-align:center;
+    margin:0 auto;
+    background-color:$primary_light;
+    padding:70px 10px;
+    p {
+        font-size:0.8125rem;
+    }
+    label {
+        position:absolute;
+        left: -9999px;
+    }
+    input, select {
+        width:100%;
+        padding:1%;
+        margin:7px 0;
+    }
+    @include breakpoint(full){
+    width:70%;
+    padding:60px;
+    #contact_fname, #contact_lname {
+      width:48%;
+    }
+    #contact_phone {
+      width:65%;
+    }
+    #contact_email {
+      width:97%;
+    }
+    #contact_gender {
+      width:32%;
+    }
+    textarea {
+      width:97%;
+      margin:7px 0;
+      height:100px;
+    }
+    button {
+        text-transform:uppercase;
+        width:30%;
+    }
+    
+    }
+}
+
 //=============SUB HEAD/SEARCH BAR=======//
 .sub_header {
     text-align:center;
@@ -421,11 +472,31 @@ h4 {
     @include breakpoint(400){
       max-width:48%;
     }
-    @include breakpoint(600){
-      max-width:27%;
-      margin:0 2.5%;
+  }
+
+  &.four {
+    li { 
+      max-width:47%;
+      margin:3px;
+      @include breakpoint(600){
+        max-width:28%;
+        margin:1.5% 2%;
+      }
+      @include breakpoint(full){
+        max-width:20%;
+      }
     }
   }
+
+  &.three {
+    li { 
+      @include breakpoint(600){
+        max-width:27%;
+        margin:0 2.5%;
+      }
+    } 
+  }
+
   img {
     max-width:100%; 
   }
