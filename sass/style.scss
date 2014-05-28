@@ -29,6 +29,7 @@ h4 {
 
 #pageWrap {
     max-width:1024px;
+    position:relative;
     @include breakpoint(800){
         margin: 25px auto 0;
     }
