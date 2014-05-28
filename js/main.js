@@ -28,7 +28,6 @@
         console.log("small"); 
         window.onscroll = function(){
           if(( window.scrollY + nav.offsetHeight ) > main.offsetHeight){
-            nav.style.position = "absolute";
             nav.style.bottom = "95px";
           } else {
             nav.style.position = "fixed";
