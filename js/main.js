@@ -20,11 +20,27 @@
         main.classList.toggle('shifted')
     });
 
-    window.onscroll = function(){
-      nav.style.top = window.scrollY + "px";
-    
+    window.onresize = makeMenuFollow;
+
+    function makeMenuFollow(){
+      console.log('enter');
+      if(window.matchMedia('screen and (max-width:800px)').matches){ 
+        console.log("small"); 
+        window.onscroll = function(){
+          if(( window.scrollY + nav.offsetHeight ) > main.offsetHeight){
+            nav.style.position = "absolute";
+            nav.style.bottom = "95px";
+          } else {
+            nav.style.position = "fixed";
+            nav.style.bottom = "-5px";
+          }
+        }
+      } else {
+        console.log("big");
+        window.onscroll = null;
+        nav.style.position = "";
+        nav.style.bottom = "";
+      }
     }
-
-
 
 })();
