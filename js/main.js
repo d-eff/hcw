@@ -25,12 +25,9 @@
     makeMenuFollow();
 
     function makeMenuFollow(){
-        console.log("fire");
       if(window.matchMedia('screen and (max-width:800px)').matches){ 
         window.onscroll = function(){
-            console.log("scroll: " + window.scrollY + " nav: " + nav.offsetHeight + " main: " + main.offsetHeight);
-          if(( window.scrollY + nav.offsetHeight ) > (main.offsetHeight)){
-              console.log("pop");
+          if(( window.scrollY + nav.offsetHeight ) > (main.offsetHeight+30)){
             nav.style.position = "absolute";    
             nav.style.bottom = "95px";
           } else {
