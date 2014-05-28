@@ -21,25 +21,28 @@
     });
 
     window.onresize = makeMenuFollow;
+    makeMenuFollow();
 
     function makeMenuFollow(){
-      console.log('enter');
+        console.log("fire");
       if(window.matchMedia('screen and (max-width:800px)').matches){ 
-        console.log("small"); 
         window.onscroll = function(){
+            console.log("scroll: " + window.scrollY + " nav: " + nav.offsetHeight + " main: " + main.offsetHeight);
           if(( window.scrollY + nav.offsetHeight ) > main.offsetHeight){
+              console.log("pop");
+            nav.style.position = "absolute";    
             nav.style.bottom = "95px";
           } else {
             nav.style.position = "fixed";
-            nav.style.bottom = "-5px";
+            nav.style.bottom = "";
           }
         }
       } else {
-        console.log("big");
         window.onscroll = null;
         nav.style.position = "";
         nav.style.bottom = "";
       }
     }
+
 
 })();
