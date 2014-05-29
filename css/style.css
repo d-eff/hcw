@@ -46,7 +46,8 @@ body {
   font-family: 'Lato', sans-serif; }
 
 h1 {
-  font-size: 2rem; }
+  font-size: 2rem;
+  font-size: ms(4); }
 
 h2 {
   font-size: 1.75rem; }
@@ -167,6 +168,7 @@ h4 {
   position: relative;
   z-index: 2;
   width: 100%;
+  padding: 40px 0;
   background-color: #fff;
   -webkit-transition: transform 0.5s linear;
   -webkit-transition: -webkit-transform 0.5s linear;
@@ -177,6 +179,7 @@ h4 {
   transition: -moz-transform 0.5s linear; }
   @media (min-width: 800px) {
     #mainWrap {
+      padding: 0px;
       width: 67%;
       float: left; } }
   @media (min-width: 1024px) {
@@ -214,22 +217,27 @@ h4 {
     .shifted {
       -webkit-transform: none; } }
 
-.page_header hgroup {
-  text-align: center;
+.page_header {
+  position: fixed;
+  top: 0px;
   width: 100%; }
+  .page_header hgroup {
+    text-align: center;
+    width: 100%; }
+    @media (min-width: 800px) {
+      .page_header hgroup {
+        display: inline-block;
+        width: 48%;
+        margin: 0 3% 0 0;
+        text-align: left;
+        vertical-align: top; } }
+    @media (min-width: 1024px) {
+      .page_header hgroup {
+        width: 61%; } }
   @media (min-width: 800px) {
-    .page_header hgroup {
-      display: inline-block;
-      width: 48%;
-      margin: 0 3% 0 0;
-      text-align: left;
-      vertical-align: top; } }
-  @media (min-width: 1024px) {
-    .page_header hgroup {
-      width: 61%; } }
-@media (min-width: 800px) {
-  .page_header {
-    margin: 15px 0; } }
+    .page_header {
+      position: relative;
+      margin: 15px 0; } }
 
 .lang_select {
   display: none;
