@@ -561,6 +561,69 @@ h4 {
   }
 }
 
+
+.main--content-block {
+    border-top:1px dashed grey;
+    padding: 20px 0;
+    text-align:center;
+    h2 {
+        font-weight:300;
+    }
+}
+.main--button {
+    border:1px solid grey;
+    padding:10px 20px;
+    margin:10px 0 0;
+    display:inline-block;
+    text-transform:uppercase;
+    font-weight:300;
+}
+
+//===========GRID============//
+.program-grid--grid-wrap {
+  text-align:left;
+}
+
+.program-grid--item-box {
+  display:inline;
+  width:100%;
+   
+  @include breakpoint(600){
+    float:left;
+    width:30%;
+    margin:15% 10px 0;
+  }
+  @include breakpoint(full){
+    width:31.2%;
+  }
+}
+
+.program-grid--item-box:nth-of-type(2n) {
+  margin:0;
+}
+
+.program-grid--item-box:nth-of-type(3n) { 
+  .program-grid--item:last-child {
+    -webkit-transform: translateX(50%);
+    @include breakpoint(600){
+      -webkit-transform:none;
+    }
+  } 
+}
+
+.program-grid--item {
+  display:inline-block;
+  max-width:48%;
+  margin:4px 0;
+  @include breakpoint(600){
+    max-width:100%;
+  }
+  img {
+    max-width:100%;
+  }
+}
+
+
 //===========BLOG============//
 
 .blog_post {

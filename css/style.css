@@ -491,6 +491,55 @@ h4 {
   text-transform: uppercase;
   font-weight: 400; }
 
+.main--content-block {
+  border-top: 1px dashed grey;
+  padding: 20px 0;
+  text-align: center; }
+  .main--content-block h2 {
+    font-weight: 300; }
+
+.main--button {
+  border: 1px solid grey;
+  padding: 10px 20px;
+  margin: 10px 0 0;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 300; }
+
+.program-grid--grid-wrap {
+  text-align: left; }
+
+.program-grid--item-box {
+  display: inline;
+  width: 100%; }
+  @media (min-width: 600px) {
+    .program-grid--item-box {
+      float: left;
+      width: 30%;
+      margin: 15% 10px 0; } }
+  @media (min-width: 1024px) {
+    .program-grid--item-box {
+      width: 31.2%; } }
+
+.program-grid--item-box:nth-of-type(2n) {
+  margin: 0; }
+
+.program-grid--item-box:nth-of-type(3n) .program-grid--item:last-child {
+  -webkit-transform: translateX(50%); }
+  @media (min-width: 600px) {
+    .program-grid--item-box:nth-of-type(3n) .program-grid--item:last-child {
+      -webkit-transform: none; } }
+
+.program-grid--item {
+  display: inline-block;
+  max-width: 48%;
+  margin: 4px 0; }
+  @media (min-width: 600px) {
+    .program-grid--item {
+      max-width: 100%; } }
+  .program-grid--item img {
+    max-width: 100%; }
+
 .blog_post {
   margin: 35px 0; }
   .blog_post .date {
