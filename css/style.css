@@ -162,7 +162,8 @@ h4 {
   border: 1px solid grey;
   padding: 60px;
   margin: 20px auto;
-  text-align: center; }
+  text-align: center;
+  display: none; }
 
 #mainWrap {
   position: relative;
@@ -220,7 +221,8 @@ h4 {
 .page_header {
   position: fixed;
   top: 0px;
-  width: 100%; }
+  width: 100%;
+  z-index: 2; }
   .page_header hgroup {
     text-align: center;
     width: 100%; }
@@ -525,7 +527,8 @@ h4 {
   margin: 0; }
 
 .program-grid--item-box:nth-of-type(3n) .program-grid--item:last-child {
-  -webkit-transform: translateX(50%); }
+  -webkit-transform: translateX(50%);
+  z-index: 1; }
   @media (min-width: 600px) {
     .program-grid--item-box:nth-of-type(3n) .program-grid--item:last-child {
       -webkit-transform: none; } }

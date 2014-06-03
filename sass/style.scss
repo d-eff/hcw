@@ -155,6 +155,10 @@ h4 {
     padding:60px;
     margin:20px auto;
     text-align:center;
+    display:none;
+    @include breakpoint(800px){
+      display:block;
+    }
 }
 
 //====================MAIN============//
@@ -221,6 +225,7 @@ h4 {
     position:fixed;
     top:0px;
     width:100%;
+    z-index:2;
     hgroup {
         text-align:center;
         width:100%;
@@ -605,6 +610,7 @@ h4 {
 .program-grid--item-box:nth-of-type(3n) { 
   .program-grid--item:last-child {
     -webkit-transform: translateX(50%);
+    z-index:1;
     @include breakpoint(600){
       -webkit-transform:none;
     }
